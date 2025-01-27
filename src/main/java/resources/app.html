@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demostración de Servicios Asincrónicos  </title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <h1>Demostración de Servicios Asincrónicos REST</h1>
+
+    <h3>Solicitud GET (Obtener datos)</h3>
+    <form id="getForm">
+        <label for="getName">Tu Nombre:</label>
+        <input type="text" id="getName" name="name" value="Usuario">
+        <button type="submit">Enviar GET</button>
+    </form>
+    <div id="getResponse" class="response"></div>
+
+    <h3>Solicitud POST (Actualizar datos)</h3>
+    <form id="postForm">
+        <label for="postName">Tu Nuevo Nombre:</label>
+        <input type="text" id="postName" name="message" value="Servidor">
+        <button type="submit">Enviar POST</button>
+    </form>
+    <div id="postResponse" class="response"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
