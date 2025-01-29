@@ -13,7 +13,7 @@ Adicionalmente, se diseñó una aplicación web que integraba estos elementos pa
 
 * **Archivos Estáticos:** Creación y uso de recursos estáticos esenciales, como un archivo HTML principal (index.html, app.html), una hoja de estilos (styles.css), un archivo de JavaScript (script.js) y una imagen de muestra.
 
-* **Comunicación REST:** Implementación de un endpoint en el servidor para habilitar la comunicación asíncrona y el intercambio dinámico de datos entre el cliente y el servidor, garantizando una interacción fluida y eficiente entre ambos mediante servicios REST.
+* **Comunicación REST:** Implementación de unos endpoints en el servidor para habilitar la comunicación asíncrona y el intercambio dinámico de datos entre el cliente y el servidor, garantizando una interacción fluida y eficiente entre ambos mediante servicios REST.
 ## Instalación
 
 **1.**  Clonar el repositorio
@@ -28,3 +28,88 @@ Adicionalmente, se diseñó una aplicación web que integraba estos elementos pa
   mvn clean install
 ```  
 Esto compilará el código Java y lo empaquetará en un archivo JAR.
+## Ejecutar el programa
+**1.**  Iniciar el servidor desde la carpeta donde se guardo el programa, por medio de la consola.
+```bash
+  mvn exec:java -Dexec.mainClass="edu.escuelaing.arem.ASE.app.HttpServer"
+```
+Otra alternativa sería abrir su IDE de preferencia y seleccionar el icono de run.
+
+**2.** Acceder a la aplicación web
+
+Abrir su navegador web y navegue por el siguiente link http://localhost:35000 para mirar la aplicacón en uso. 
+
+
+
+## Arquitectura del Proyecto 
+**Estructura del directorio**
+El directorio del proyecto esta organizado de la siguiente manera:
+
+
+
+
+Falta img de la arq
+
+
+
+
+**Componente Principal**
+- *HttpServer* : El HttpServer que se presenta en el código es un servidor HTTP básico implementado en Java. Este servidor escucha solicitudes de los clientes en un puerto específico y responde a esas solicitudes, manejando principalmente dos tipos de solicitudes: GET y POST. 
+
+### Flujo de Datos
+
+**Servidor HTTP:** Este servidor HTTP simple escucha solicitudes en el puerto `35000` y maneja tanto archivos estáticos como solicitudes de API REST.
+
+**Recepción de Solicitudes**
+
+El servidor escucha en el puerto `35000` utilizando `ServerSocket`. Cuando se recibe una solicitud, se crea un `Socket` para gestionar la conexión. El método `handleRequestClient(Socket clientSocket)` se encarga de procesar la solicitud.
+
+**Procesamiento de la Solicitud**
+
+*Solicitudes GET:*
+
+- **Archivos Estáticos**: Si la solicitud es para un archivo estático (por ejemplo, `index.html`, `img.png`,`styles.css `,`script.js`), el servidor busca el archivo en el directorio `src/main/java/resources`. Si el archivo existe, se envía con el tipo de contenido adecuado (por ejemplo, `text/html` para un archivo HTML). Si no se encuentra el archivo, el servidor responde con un **404 Not Found**.
+  
+- **API REST**: Si la solicitud es para un endpoint de la API (por ejemplo, `/api/hello`), el servidor responde con un JSON. Si no se pasa un nombre como parámetro, el servidor utiliza "usuario" como valor por defecto en el JSON.
+
+*Solicitudes POST:*
+
+- **Actualización de Nombre**: El servidor maneja solicitudes POST para actualizar un nombre. Se espera que el cuerpo de la solicitud contenga un JSON. El nombre enviado en la solicitud se guarda en un `dataStore` y el servidor responde con un mensaje de éxito.
+
+**Envío de Respuestas**
+
+- **Archivos Estáticos**: El servidor responde con el archivo solicitado, utilizando el código de estado **200 OK** y el tipo de contenido adecuado (por ejemplo, `text/html` o `application/javascript`).
+
+- **API REST (JSON)**: Si la solicitud es para un endpoint de la API, el servidor responde con el código de estado **200 OK** y el contenido JSON adecuado.
+
+
+
+## Dependencias
+
+- **Biblioteca estándar de Java**: Utilizada para la gestión de redes, manejo de archivos y procesamiento concurrente.
+  
+- **Maven**: Utilizado para la gestión de dependencias y la automatización de la compilación. La configuración se especifica en el archivo `pom.xml`.
+
+## EndPoints
+
+- **GET /api/hello**: Este endpoint devuelve un JSON con un saludo. Si no se pasa un nombre como parámetro, el valor por defecto es "usuario".
+  
+- **POST /api/updateName**: Este endpoint permite actualizar el nombre del usuario. Se espera que el cuerpo de la solicitud contenga un JSON con el nuevo nombre.
+
+## Archivos Estáticos
+
+**1. `app.html` :**  Demuestra las solicitudes asincrónicas REST. Contiene formularios para realizar solicitudes **GET** (obtener datos) y **POST** (actualizar datos). Los resultados se muestran dinámicamente en la misma página.
+
+**2. `script.js` :** Maneja las solicitudes **GET** y **POST** de manera asincrónica, procesando las respuestas del servidor y actualizando la interfaz con el mensaje correspondiente.
+
+**3. `img.png` :** Imagen utilizada en la interfaz, probablemente como diagrama o ilustración.
+
+**4. `index.html`:** Explica el modelo **Cliente-Servidor** y ofrece un enlace a la página `app.html` para probar los servicios asincrónicos.
+
+**5. `styles.css` :** Define el estilo de la interfaz, con colores y diseños para los formularios, botones y respuestas, mejorando la experiencia del usuario.
+
+
+## Pruebas
+## Autor
+
+**Laura Gil** - Desarolladora y autora del proyecto. 
