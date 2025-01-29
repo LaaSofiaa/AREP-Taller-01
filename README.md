@@ -45,13 +45,7 @@ Abrir su navegador web y navegue por el siguiente link http://localhost:35000 pa
 **Estructura del directorio**
 El directorio del proyecto esta organizado de la siguiente manera:
 
-
-
-
-Falta img de la arq
-
-
-
+![image](https://github.com/user-attachments/assets/7ec2dd45-9b0a-4c93-b020-fbaad55c483a)
 
 **Componente Principal**
 - *HttpServer* : El HttpServer que se presenta en el código es un servidor HTTP básico implementado en Java. Este servidor escucha solicitudes de los clientes en un puerto específico y responde a esas solicitudes, manejando principalmente dos tipos de solicitudes: GET y POST. 
