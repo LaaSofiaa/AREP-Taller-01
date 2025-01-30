@@ -102,7 +102,7 @@ El servidor escucha en el puerto `35000` utilizando `ServerSocket`. Cuando se re
 **5. `styles.css` :** Define el estilo de la interfaz, con colores y diseños para los formularios, botones y respuestas, mejorando la experiencia del usuario.
 
 
-## Pruebas
+## Pruebas de Usuario
 
 Para verificar el funcionamiento del servidor web y de la aplicación, realice las siguientes pruebas:
 
@@ -126,6 +126,13 @@ Para verificar el funcionamiento del servidor web y de la aplicación, realice l
 
 - Solicitud POST de prueba: Se hace click en el botón «Enviar POST» de la página web para actualizar el nombre del usuario, mostrando un mensaje de confirmación. 
 ![image](https://github.com/user-attachments/assets/1fc6afbf-36f0-4d8f-b9c3-2837d3fbb188)
+
+## Pruebas Automatizadas
+
+La clase AppTest prueba un servidor HTTP (HttpServer) usando JUnit 5. Verifica solicitudes GET y POST, y la entrega de recursos como HTML, JS, CSS e imágenes. Usa un Map<String, String> (dataStore) para simular datos y una clase SocketTest para simular conexiones. Las pruebas aseguran que el servidor responda correctamente y que los archivos existan.
+
+![image](https://github.com/user-attachments/assets/779d682f-5782-4c84-ba74-3d31e8c2a895)
+
 
 ## Autor
 
