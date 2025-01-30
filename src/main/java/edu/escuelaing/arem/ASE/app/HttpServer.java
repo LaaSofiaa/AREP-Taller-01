@@ -41,7 +41,7 @@ public class HttpServer {
      * Maneja la solicitud de un cliente y delega la acción según el tipo de solicitud.
      * @param clientSocket El socket de la conexión con el cliente.
      */
-    private static void handleRequestClient(Socket clientSocket) {
+    public static void handleRequestClient(Socket clientSocket) {
         try (BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
              PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
              BufferedOutputStream dataOut = new BufferedOutputStream(clientSocket.getOutputStream())) {
@@ -214,5 +214,9 @@ public class HttpServer {
             return "";
         }
         return fileRequested.substring(dotIndex + 1).toLowerCase();
+    }
+
+    public static Map<String, String> getDataStore() {
+        return dataStore;
     }
 }
