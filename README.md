@@ -131,6 +131,13 @@ Para verificar el funcionamiento del servidor web y de la aplicación, realice l
 
 La clase AppTest prueba un servidor HTTP (HttpServer) usando JUnit 5. Verifica solicitudes GET y POST, y la entrega de recursos como HTML, JS, CSS e imágenes. Usa un Map<String, String> (dataStore) para simular datos y una clase SocketTest para simular conexiones. Las pruebas aseguran que el servidor responda correctamente y que los archivos existan.
 
+Para correr las pruebas usamos el siguiente comando
+
+```bash
+  mvn test
+
+```
+
 ![image](https://github.com/user-attachments/assets/779d682f-5782-4c84-ba74-3d31e8c2a895)
 
 
