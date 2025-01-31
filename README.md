@@ -43,9 +43,13 @@ Abrir su navegador web y navegue por el siguiente link http://localhost:35000 pa
 
 ## Arquitectura del Proyecto 
 **Estructura del directorio**
+
 El directorio del proyecto esta organizado de la siguiente manera:
 
 ![image](https://github.com/user-attachments/assets/7ec2dd45-9b0a-4c93-b020-fbaad55c483a)
+
+**Diagrama de la Arquitectura**
+
 ![image](https://github.com/user-attachments/assets/655820bf-2900-4099-9fcd-db6131250603)
 
 
